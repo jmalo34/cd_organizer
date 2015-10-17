@@ -1,12 +1,12 @@
-# _{Trabajos}_
+# _{CD Organizer}_
 
-##### _{Jobs You've Held, PHP OOP practice}, {August 2015}_
+##### _{Organize Your CD Album Collection, PHP OOP practice (Saving in Silex, display using Twig)}, {August 2015}_
 
 #### By _**{Jenna Maloney}**_
 
 ## Description
 
-_{This web app will store information about a user's job history, eliminating the need to reference one's resume each time they apply for new employment somewhere online. The app keeps vital information about each job stored in an organized manner, to easily be displayed and ready for input into a job application.}_
+_{This web app will store information about a user's CD collection. The app keeps stores both the album title and artist, and has a search feature.}_
 
 ## Setup
 
