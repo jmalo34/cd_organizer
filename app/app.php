@@ -25,7 +25,7 @@
 
     $app->post('/new_cd', function () use ($app)
     {
-        $album = new CD($_POST['title']);
+        $album = new CD($_POST['title'], $_POST['artist']);
         $album->save();
 
         return $app['twig']->render('cds.html.twig', array('albums' => CD::getAll()));
