@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>Search Results</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+</head>
+<body>
+    <div class='container'>
+        <h1>CD Organizer</h1>
+        <h2>Search Results</h2>
+        {% if catalog is not empty %}
+            <h3>Your Collection includes the following albums by {{ album.getArtist }}</h3>
+            {% for album in catalog %}
+                <ul>
+                    <li><i>{{ album.getTitle}}</i>,{{ album.getArtist }}</li>
+                </ul>
+                {% endfor %}
+        {% else %}
+            <h3>No albums in your Collection were found to match your search</h3>
+        {% endif %}
+        <p><a href='/searchbyartist'>search again</a></p>
+        <p><a href='/'>return home</a></p>
+    </div>
+</body>
+</html>

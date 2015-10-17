@@ -30,6 +30,11 @@ class CD
         return $this->artist;
     }
 
+    function artistSearch($artist_search)
+    {
+        return ($artist_search == $this->artist);
+    }
+
     function save()
     {
         array_push($_SESSION['collection'], $this);
