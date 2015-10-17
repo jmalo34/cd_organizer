@@ -17,5 +17,20 @@ class CD
     {
         return $this->title;
     }
+
+    function save()
+    {
+        array_push($_SESSION['collection'], $this);
+    }
+    
+    static function getAll()
+    {
+        return $_SESSION['collection'];
+    }
+
+    static function deleteAll()
+    {
+        $_SESSION['collection'] = array();
+    }
 }
  ?>

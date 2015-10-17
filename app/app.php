@@ -15,17 +15,23 @@
 
     $app->get('/', function () use ($app)
     {
-        return $app['twig']->render('home.html.twig');
+        return $app['twig']->render('cds.html.twig', array('albums' => CD::getAll()));
     });
 
-    $app->post('new_cd', function () use ($app)
+    $app->get('/new_cd', function () use ($app)
     {
-        $an_album = new CD($_POST['title']);
-
-        return $app['twig']->render('new_cd.html.twig', array ('add_album' => $an_album));
+        return $app['twig']->render('new_cd.html.twig');
     });
 
-    $app->post('delete_cds', function () use ($app)
+    $app->post('/new_cd', function () use ($app)
+    {
+        $new_album = new CD($_POST['title']);
+        $new_album->save();
+
+        return $app['twig']->render('cds.html.twig', array('album' => $new_album));
+    });
+
+    $app->post('/delete_cds', function () use ($app)
     {
         CD::deleteAll();
 
