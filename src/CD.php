@@ -32,7 +32,10 @@ class CD
 
     function artistSearch($artist_search)
     {
-        return ($artist_search == $this->artist);
+        if (stripos($this->artist, $artist_search) !==false)
+        {
+            return $this->artist;
+        }
     }
 
     function save()
