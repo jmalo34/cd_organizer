@@ -25,10 +25,10 @@
 
     $app->post('/new_cd', function () use ($app)
     {
-        $new_album = new CD($_POST['title']);
-        $new_album->save();
+        $album = new CD($_POST['title']);
+        $album->save();
 
-        return $app['twig']->render('cds.html.twig', array('album' => $new_album));
+        return $app['twig']->render('cds.html.twig', array('albums' => CD::getAll()));
     });
 
     $app->post('/delete_cds', function () use ($app)
